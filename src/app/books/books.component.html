@@ -1,9 +1,9 @@
 <div class="container">
     <form style="width: 300px;">
         <div class="form-group">
-            <label for="">Категорія</label>
-            <select class="form-control">
-                <option>Hello</option>
+            <label for="">Жанр</label>
+            <select (change)="onChangeGenre($event.target.value)" class="form-control">
+                <option *ngFor="let genre of genres" value="{{genre.id}}">{{genre.name}}</option>
             </select>
         </div>
     </form>

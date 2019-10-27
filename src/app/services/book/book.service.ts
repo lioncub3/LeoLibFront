@@ -16,6 +16,10 @@ export class BookService {
   public findAll(): Observable<Book[]> {
     return this.http.get<Book[]>(this.booksUrl);
   }
+
+  public findByGategoryId(categoryId : Int32Array): Observable<Book[]> {
+    return this.http.get<Book[]>(this.booksUrl + "/" + categoryId);
+  }
  
   public save(book: Book) {
     return this.http.post<Book>(this.booksUrl, book);

@@ -1,15 +1,26 @@
-<div class="d-flex">
-    <div class="card" style="max-width: 300px">
-        <img class="card-img-top"
-            src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/bologna-1.jpg"
-            alt="Bologna">
-        <div class="card-body">
-            <h4 class="card-title">Bologna</h4>
-            <h6 class="card-subtitle mb-2 text-muted">Emilia-Romagna Region, Italy</h6>
-            <p class="card-text">It is the seventh most populous city in Italy, at the heart of a metropolitan area of
-                about one million people. </p>
-            <a href="#" class="card-link">Read More</a>
-            <a href="#" class="card-link">Book a Trip</a>
+<div *ngFor="let book of books" class="book-elem">
+    <div class="d-flex">
+        <img class="img-fluid"
+            src="https://www.adazing.com/wp-content/uploads/2019/02/open-book-clipart-06-1-300x300.png" alt="Bologna">
+        <div>
+            <h3>
+                {{book.name}}
+            </h3>
+            <p>
+                <span class="font-weight-bold">Рік: </span>{{book.publishDate}}
+            </p>
+            <p>
+                <span class="font-weight-bold">Жанр: </span>{{book.genre.name}}
+            </p>
+            <p>
+                <span class="font-weight-bold">Автор: </span>{{book.author}}
+            </p>
+            <p>
+                {{book.description}}
+            </p>
         </div>
     </div>
+    <div class="d-flex flex-row-reverse">
+            <button class="btn btn-success">Добавити в закладки</button>
+        </div>
 </div>
