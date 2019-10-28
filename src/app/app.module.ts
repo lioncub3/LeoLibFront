@@ -8,6 +8,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { BooksComponent } from './books/books.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RegistrationComponent } from './registration/registration.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,12 +18,14 @@ import { HttpClientModule } from '@angular/common/http';
     NotFoundComponent,
     BooksComponent,
     BooksComponent,
-    BookListComponent
+    BookListComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

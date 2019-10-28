@@ -1,0 +1,22 @@
+<div class="container">
+    <form #myForm="ngForm" novalidate style="width: 300px;" (ngSubmit)="registration(user)">
+        <div class="form-group">
+            <label for="name">Логін</label>
+            <input [(ngModel)]="user.name" #name="ngModel" name="name" id="name" class="form-control" type="text"
+                required>
+            <div [hidden]="name.valid || name.untouched" class="alert alert-danger">
+                Логін не вказано
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password">Пароль</label>
+            <input [(ngModel)]="user.password" #password="ngModel" name="password" id="password" class="form-control"
+                type="password" required>
+            <div [hidden]="password.valid || password.untouched" class="alert alert-danger">
+                Пароль не вказано
+            </div>
+        </div>
+        <button [disabled]="myForm.invalid"
+            class="btn btn-success">Зарєєструватись</button>
+    </form>
+</div>
