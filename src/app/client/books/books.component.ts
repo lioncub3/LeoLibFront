@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Genre } from '../models/genre/genre';
-import { GenreService } from '../services/genre/genre.service';
-import { Book } from '../models/book/book';
-import { BookService } from '../services/book/book.service';
+import { Genre } from '../../models/genre/genre';
+import { GenreService } from '../../services/genre/genre.service';
+import { Book } from '../../models/book/book';
+import { BookService } from '../../services/book/book.service';
 import { BookListComponent } from '../book-list/book-list.component';
 
 @Component({
