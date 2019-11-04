@@ -1,1 +1,28 @@
-<p>admin-books works!</p>
+<div class="container">
+    <h3>
+        Книги
+    </h3>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>Назва</th>
+                <th>Рік</th>
+                <th>Жанр</th>
+                <th>Автор</th>
+                <th>Дії</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let book of books">
+                <td>{{book.name}}</td>
+                <td>{{book.publishDate}}</td>
+                <td>{{book.genre.name}}</td>
+                <td>{{book.author}}</td>
+                <td>
+                    <a [routerLink]="['edit-book', book.id]" class="btn btn-info">Редагувати</a>
+                    <button (click)="removeBook(book.id)" class="btn btn-danger">Видалити</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

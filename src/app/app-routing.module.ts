@@ -4,13 +4,16 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { BooksComponent } from './client/books/books.component';
 import { RegistrationComponent } from './client/registration/registration.component';
 import { AdminBooksComponent } from './admin/admin-books/admin-books.component';
+import { EditBookComponent } from './admin/edit-book/edit-book.component';
 
 
 const routes: Routes = [
   {
     path: 'admin',
     children: [
-      {path: 'books', component: AdminBooksComponent},
+      { path: '', redirectTo: '/admin/books', pathMatch: 'full' },
+      { path: 'books', component: AdminBooksComponent },
+      { path: 'edit-book/:id', component: EditBookComponent},
       { path: '**', component: NotFoundComponent }
     ]
   },
