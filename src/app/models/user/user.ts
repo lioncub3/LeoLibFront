@@ -1,5 +1,5 @@
 export class User {
-    id : Int32Array;
+    id : number;
     name : String;
     password : String;
     isAdmin : Boolean;

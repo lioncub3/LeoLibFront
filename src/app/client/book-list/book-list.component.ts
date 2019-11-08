@@ -19,7 +19,7 @@ export class BookListComponent implements OnInit {
     });
   }
 
-  getBookByCategoryId(id : Int32Array) {
+  getBookByCategoryId(id : number) {
     this.bookService.findByGategoryId(id).subscribe(data => {
       this.books = data;
     });

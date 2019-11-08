@@ -1,1 +1,60 @@
-<p>edit-book works!</p>
+<div class="container">
+    <form #myForm="ngForm" novalidate style="width: 300px;" (ngSubmit)="editBook(book)">
+
+        <div class="form-group">
+            <label for="name">Назва</label>
+            <input [(ngModel)]="book.name" #name="ngModel" name="name" id="name" class="form-control" type="text"
+                required>
+            <div [hidden]="name.valid || name.untouched" class="alert alert-danger">
+                Назва не вказана
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Опис</label>
+            <textarea [(ngModel)]="book.description" #description="ngModel" name="description" id="description"
+                class="form-control" rows="4" required></textarea>
+            <div [hidden]="description.valid || description.untouched" class="alert alert-danger">
+                Опис не вказаний
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="publishDate">Дата публікації</label>
+            <input [(ngModel)]="book.publishDate" #publishDate="ngModel" name="publishDate" id="publishDate"
+                class="form-control" type="number" required>
+            <div [hidden]="publishDate.valid || publishDate.untouched" class="alert alert-danger">
+                Дата публікації не вказана
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="author">Автор</label>
+            <input [(ngModel)]="book.author" #author="ngModel" name="author" id="author" class="form-control"
+                type="text" required>
+            <div [hidden]="author.valid || author.untouched" class="alert alert-danger">
+                Автор не вказаний
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="photoAddress">URL фото</label>
+            <input [(ngModel)]="book.photoAddress" #photoAddress="ngModel" name="photoAddress" id="photoAddress"
+                class="form-control" type="text" required>
+            <div [hidden]="photoAddress.valid || photoAddress.untouched" class="alert alert-danger">
+                URL фото не вказаний
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="genre">Жанр</label>
+            <select [(ngModel)]="book.genre.id" #genre="ngModel" name="genre" id="genre" class="form-control" required>
+                <option *ngFor="let genr of genres" value="{{genr.id}}">{{genr.name}}</option>
+            </select>
+            <div [hidden]="genre.valid || genre.untouched" class="alert alert-danger">
+                Жанр не вказаний
+            </div>
+        </div>
+        <button [disabled]="myForm.invalid" class="btn btn-success">Зберегти</button>
+    </form>
+</div>

@@ -19,7 +19,10 @@ export class AdminBooksComponent implements OnInit {
     });
   }
 
-  removeBook(id : Int32Array) {
-    this.bookService.delete(id).subscribe();
+  removeBook(id : number) {
+    this.bookService.delete(id).subscribe(() =>
+    this.bookService.findAll().subscribe(data => {
+      this.books = data;
+    }));
   }
 }

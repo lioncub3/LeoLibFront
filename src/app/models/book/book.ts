@@ -1,10 +1,10 @@
 import { Genre } from '../genre/genre';
 
 export class Book {
-    id : Int32Array;
+    id : number;
     name : String;
-    descrition : String;
-    publishDate : Int32Array;
+    description : String;
+    publishDate : number;
     author : String;
     photoAddress : String;
     genre : Genre;

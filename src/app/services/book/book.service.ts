@@ -17,7 +17,11 @@ export class BookService {
     return this.http.get<Book[]>(this.booksUrl);
   }
 
-  public findByGategoryId(categoryId: Int32Array): Observable<Book[]> {
+  public findOne(id: number): Observable<Book> {
+    return this.http.get<Book>("http://localhost:8080/book" + "/" + id);
+  }
+
+  public findByGategoryId(categoryId: number): Observable<Book[]> {
     return this.http.get<Book[]>(this.booksUrl + "/" + categoryId);
   }
 
@@ -25,7 +29,12 @@ export class BookService {
     return this.http.post<Book>(this.booksUrl, book);
   }
 
-  public delete(id: Int32Array) {
+  public delete(id: number) {
     return this.http.delete(this.booksUrl + "/" + id);
+  }
+
+  public update(book: Book) {
+    console.log(book);
+    return this.http.put(this.booksUrl, book);
   }
 }
